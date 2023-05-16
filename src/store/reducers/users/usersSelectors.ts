@@ -12,3 +12,8 @@ const selectAll = createSelector(
 }));
 
 export const selectCommunication = createSelector(selectAll, state => state.communication);
+
+export const selectUsers = createSelector(
+  selectAll,
+  (state) => state.users,
+);

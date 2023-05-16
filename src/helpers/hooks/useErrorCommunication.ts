@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import useSnackbar from 'src/common/Snackbar/useSnackbar';
+import useSnackbar from 'src/components/common/Snackbar/useSnackbar';
 import {usePrevious} from 'src/helpers/hooks/usePrevious';
 import {ICommunication} from 'src/models/common/ICommunication';
 

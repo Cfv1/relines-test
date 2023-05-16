@@ -1,5 +1,5 @@
 import React from "react";
-import {ISnackInfo} from 'src/common/Snackbar/SnackbarProvider';
+import {ISnackInfo} from 'src/components/common/Snackbar/SnackbarProvider';
 
 export interface ISnackbarContext {
   snack: ISnackInfo;
