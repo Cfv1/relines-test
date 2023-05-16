@@ -6,16 +6,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from 'src/store/store';
+import SnackbarProvider from 'src/common/Snackbar/SnackbarProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <SnackbarProvider>
       <App />
-    </Provider>
-  </React.StrictMode>
+    </SnackbarProvider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
