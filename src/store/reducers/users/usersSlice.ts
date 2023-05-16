@@ -20,13 +20,17 @@ const initialState: IUserState = {
 const UsersSlice = createSlice({
   name: 'users',
   initialState,
-  reducers: {},
+  reducers: {
+    deleteUsers: (state) => {
+      state.users = [];
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.pending, (state) => {
       state.communication.isRequesting = true;
     });
     builder.addCase(fetchUsers.fulfilled, (state, action: PayloadAction<IUser[]>) => {
-      state.users.concat(action.payload);
+      state.users = state.users.concat(action.payload);
       state.communication.isRequesting = false;
       state.communication.isSuccess = true;
     });

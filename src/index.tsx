@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from 'src/store/store';
-import SnackbarProvider from 'src/common/Snackbar/SnackbarProvider';
+import SnackbarProvider from 'src/components/common/Snackbar/SnackbarProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

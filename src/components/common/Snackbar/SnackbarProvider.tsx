@@ -1,7 +1,7 @@
 import React, {memo, useState} from 'react';
 import {Alert, Snackbar} from '@mui/material';
 
-import { SnackbarContext } from './useSnackbar';
+import { SnackbarContext } from 'src/components/common/Snackbar/useSnackbar';
 
 const initialSnack = {
   message: '',
