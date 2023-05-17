@@ -1,6 +1,6 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Create .env.local file:
+REACT_APP_API_URL = 'https://random-data-api.com/api'
+### .env file is needed for production
 
 ## Available Scripts
 
