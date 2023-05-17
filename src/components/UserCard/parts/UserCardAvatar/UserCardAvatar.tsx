@@ -2,9 +2,9 @@ import React, {memo, useMemo} from 'react';
 import {Box, useTheme} from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import {IMAGE_DEFAULT, IMAGE_MOBILE, ROOT_CONTAINER} from 'src/components/UserCard/parts/UserCardAvatar/styles';
 import {IUser} from 'src/models/IUser';
-import UserCardAvatarHeader from 'src/components/UserCard/parts/UserCardAvatar/parts/UserCardAvatarHeader';
+import UserCardAvatarHeader from './parts/UserCardAvatarHeader/UserCardAvatarHeader';
+import {IMAGE_DEFAULT, IMAGE_MOBILE, ROOT_CONTAINER} from './styles';
 
 interface IUserCardAvatarProps {
   user: IUser;

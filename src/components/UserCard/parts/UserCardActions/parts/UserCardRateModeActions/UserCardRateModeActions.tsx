@@ -39,20 +39,20 @@ const UserCardRateModeActions = (props: UserCardActionsProps) => {
       <CardActions disableSpacing>
         <Box sx={{...RATING_CONTAINER, flexDirection: matches ? 'row' : 'column'}}>
           <Box sx={RATING_BUTTONS_CONTAINER}>
-            <IconButton onClick={onLike}>
+            <IconButton onClick={onLike} data-testid="like-button">
               <AddIcon fontSize="small" />
             </IconButton>
-            <div>
+            <div data-testid="user-rating">
               {user.rating}
             </div>
-            <IconButton onClick={onDislike}>
+            <IconButton onClick={onDislike} data-testid="dislike-button">
               <RemoveIcon fontSize="small" />
             </IconButton>
           </Box>
 
           {user.rating === 0 && (
             <Box sx={RETURN_BUTTON_CONTAINER}>
-              <IconButton onClick={onReturn}>
+              <IconButton onClick={onReturn} data-testid="return-button">
                 <KeyboardReturnIcon fontSize="small" />
               </IconButton>
             </Box>

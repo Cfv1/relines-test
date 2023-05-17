@@ -40,7 +40,7 @@ export function useEditRatingModal(props: IUseEditRatingModal) {
       setRatingOutcome(Outcome.REWARD);
       onOpen();
     }
-  }, [onOpen, user.rating, user.username]);
+  }, [onOpen, user.rating]);
 
   const onSuccessModal = () => {
     onClose();

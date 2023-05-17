@@ -36,7 +36,7 @@ const InitialUsers = () => {
 
   return (
     <Box sx={ROOT_CONTAINER}>
-      {communication.isRequesting && <Loading />}
+      {communication.isRequesting && <Loading data-testid="loading" />}
       <Box sx={BUTTONS_CONTAINER}>
         <ColorIconButton title="Обновить список пользователей" onClick={refreshUsers}>
           <RefreshIcon/>

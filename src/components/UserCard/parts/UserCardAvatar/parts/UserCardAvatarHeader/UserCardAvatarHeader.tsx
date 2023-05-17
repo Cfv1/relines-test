@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import UserInfoTooltip from 'src/components/common/UserInfoButton/UserInfoTooltip';
 import {Outcome} from 'src/models/Outcome';
 import {IUser} from 'src/models/IUser';
-import {BAN_OUTCOME, OUTCOME_CONTAINER, PRIZE_OUTCOME, TOOLTIP_CONTAINER} from '../styles';
+import {BAN_OUTCOME, OUTCOME_CONTAINER, PRIZE_OUTCOME, TOOLTIP_CONTAINER} from './styles';
 
 const mapOutcomeDescriptionToOutcome: Record<Outcome, string> = {
   [Outcome.REWARD]: 'Пользователь был вознагражден',
@@ -33,7 +33,7 @@ const UserCardAvatarHeader = (props: IUserCardAvatarHeaderProps) => {
   return (
     <>
       {user.lastOutcome && (
-        <Tooltip title={mapOutcomeDescriptionToOutcome[user.lastOutcome]}>
+        <Tooltip title={mapOutcomeDescriptionToOutcome[user.lastOutcome]} data-testid="outcome">
           <Box sx={OUTCOME_CONTAINER}>
             {mapIconToOutcome[user.lastOutcome]}
           </Box>
