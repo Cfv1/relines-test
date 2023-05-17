@@ -8,6 +8,7 @@ const selectAll = createSelector(
   selectState,
   (state) => ({
     users: state.users,
+    ratedUsers: state.ratedUsers,
     communication: state.communication
 }));
 
@@ -16,4 +17,9 @@ export const selectCommunication = createSelector(selectAll, state => state.comm
 export const selectUsers = createSelector(
   selectAll,
   (state) => state.users,
+);
+
+export const selectRatedUsers = createSelector(
+  selectAll,
+  (state) => state.ratedUsers
 );

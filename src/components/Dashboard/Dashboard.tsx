@@ -3,6 +3,7 @@ import Header from 'src/components/Header/Header';
 import {Box, Container} from '@mui/material';
 import {CONTENT_CONTAINER} from 'src/components/Dashboard/styles';
 import InitialUsers from 'src/components/InitialUsers/InitialUsers';
+import WorkingUsers from 'src/components/WorkingUsers/WorkingUsers';
 
 const Dashboard = () => {
   return (
@@ -13,7 +14,7 @@ const Dashboard = () => {
         <Box display="flex">
           <InitialUsers />
           <div>-разделитель-</div>
-          <div>Пользователи в работе с рейтингом</div>
+          <WorkingUsers />
         </Box>
       </Container>
     </>
