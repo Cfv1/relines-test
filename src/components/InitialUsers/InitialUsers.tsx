@@ -12,6 +12,7 @@ import {useAppDispatch} from 'src/store/hooks/useAppDispatch';
 import {useActions} from 'src/store/hooks/useActions';
 import Loading from 'src/components/common/Loading/Loading';
 import ColorIconButton from 'src/components/common/Button/ColorIconButton';
+import {UserMode} from 'src/models/UserMode';
 
 const InitialUsers = () => {
   const users = useAppSelector(selectUsers);
@@ -47,7 +48,7 @@ const InitialUsers = () => {
 
       <Box sx={USERS_CONTAINER}>
         {users?.map(user => (
-          <UserCard key={user.uid} data={user} />
+          <UserCard key={user.uid} data={user} mode={UserMode.SHOW} />
         ))}
       </Box>
     </Box>

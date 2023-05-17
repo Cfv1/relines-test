@@ -1,13 +1,14 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import API from 'src/store/services/base/axios';
-import {IUser} from 'src/models/IUser';
+import {IServerUser} from 'src/store/services/models/IServerUser';
+import {convertServerToClient} from 'src/store/services/converters/user';
 
 const BASE_PATH = '/users/random_user';
 
 export const fetchUser = createAsyncThunk("user/fetchCurrent", async (_, {rejectWithValue}) => {
   try {
-    const response = await API.get<IUser>(BASE_PATH);
-    return response.data;
+    const response = await API.get<IServerUser>(BASE_PATH);
+    return convertServerToClient(response.data);
   } catch (error) {
     return rejectWithValue('Не удалось загрузить текущего пользователя');
   }
@@ -15,8 +16,8 @@ export const fetchUser = createAsyncThunk("user/fetchCurrent", async (_, {reject
 
 export const fetchUsers = createAsyncThunk("user/fetchAll", async (_, {rejectWithValue}) => {
   try {
-    const response = await API.get<IUser[]>(`${BASE_PATH}?size=2`);
-    return response.data;
+    const response = await API.get<IServerUser[]>(`${BASE_PATH}?size=2`);
+    return response.data.map(convertServerToClient);
   } catch (error) {
     return rejectWithValue('Не удалось загрузить пользователей');
   }
